@@ -5,8 +5,8 @@ import Drinks from '../../data/drinks.json';
 import './Drink.css';
 
 const Drink = () => {
-  const id = useParams().id;
-  const drink = Drinks.cocktails[id];
+  const name = useParams().name;
+  const drink = Drinks.cocktails.find((drink) => drink.name === name);
   return (
     <Paper square className="drink">
       <div className="info">

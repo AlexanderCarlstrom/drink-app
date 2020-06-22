@@ -13,14 +13,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Explore = () => {
   const classes = useStyles();
-  const drinks = Drinks.cocktails;
   const [result, setResult] = useState([]);
   const [search, setSearch] = useState('');
 
   const searchDrinks = (e) => {
     e.preventDefault();
-    console.log(e);
-    setResult([drinks[5], drinks[1], drinks[2], drinks[3], drinks[4]]);
+    const searchResults = [];
+
+    Drinks.cocktails.map((drink) => {
+      if (drink.name.toLowerCase().indexOf(search.toLowerCase()) > -1) {
+        searchResults.push(drink);
+      }
+
+      setResult(searchResults);
+    });
   };
 
   return (
@@ -29,8 +35,14 @@ const Explore = () => {
         Find your favourite drink!
       </Typography>
       <div className="search-form">
-        <form>
-          <TextField label="Search" variant="outlined" className="search-field" fullWidth onChange={setSearch} />
+        <form onSubmit={searchDrinks}>
+          <TextField
+            label="Search"
+            variant="outlined"
+            className="search-field"
+            fullWidth
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <Button
             variant="contained"
             color="primary"

@@ -24,12 +24,12 @@ const DrinkList = (props) => {
     <div className="drinks">
       {props.drinks.map((drink, index) => {
         return (
-          <Link to={'drink/' + index}>
-            <Card className={classes.root} key={index}>
+          <Link to={'drink/' + drink.name} className="link" key={index}>
+            <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia image={drink.image} title={drink.name} className={classes.media} />
                 <CardContent>
-                  <Typography variant="h4">{drink.name}</Typography>
+                  <Typography variant="h6">{drink.name}</Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
