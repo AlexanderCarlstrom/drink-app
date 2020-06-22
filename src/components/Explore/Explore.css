@@ -1,0 +1,10 @@
+.search-form {
+  width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.search-btn {
+  margin-top: 20px;
+}
