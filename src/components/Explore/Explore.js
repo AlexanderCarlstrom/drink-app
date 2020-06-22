@@ -16,6 +16,7 @@ const Explore = () => {
   const [result, setResult] = useState([]);
   const [search, setSearch] = useState('');
 
+  // loop through all drinks and see if any of them matches the search
   const searchDrinks = (e) => {
     e.preventDefault();
     const searchResults = [];
@@ -26,6 +27,7 @@ const Explore = () => {
       }
     });
 
+    // if no drinks were found - set result to a string
     if (searchResults.length === 0) {
       setResult('No Drinks Found');
     } else {

@@ -21,6 +21,7 @@ const DrinkList = (props) => {
   const classes = useStyles();
 
   const drinks = () => {
+    // if no drinks where found
     if (!Array.isArray(props.drinks)) {
       return <Typography variant="subtitle1">{props.drinks}</Typography>;
     } else {

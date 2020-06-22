@@ -5,7 +5,10 @@ import Drinks from '../../data/drinks.json';
 import './Drink.css';
 
 const Drink = () => {
+  // get name from url
   const name = useParams().name;
+
+  // find the drink from name in url
   const drink = Drinks.cocktails.find((drink) => drink.name === name);
   return (
     <Paper square className="drink">
