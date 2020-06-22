@@ -20,7 +20,7 @@ const Explore = () => {
   const searchDrinks = (e) => {
     e.preventDefault();
     console.log(e);
-    setResult([drinks[0], drinks[1], drinks[2], drinks[3], drinks[4]]);
+    setResult([drinks[5], drinks[1], drinks[2], drinks[3], drinks[4]]);
   };
 
   return (

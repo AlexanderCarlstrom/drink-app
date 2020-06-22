@@ -1,0 +1,23 @@
+.drink {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 600px;
+  background-color: #fff;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info {
+  width: 300px;
+  display: inline-block;
+  padding: 20px;
+}
+
+.image {
+  width: 300px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}

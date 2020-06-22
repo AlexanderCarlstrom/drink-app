@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardMedia, CardActionArea, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import './DrinkList.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,14 +24,16 @@ const DrinkList = (props) => {
     <div className="drinks">
       {props.drinks.map((drink, index) => {
         return (
-          <Card className={classes.root} key={index}>
-            <CardActionArea>
-              <CardMedia image={drink.image} title={drink.name} className={classes.media} />
-              <CardContent>
-                <Typography variant="h4">{drink.name}</Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+          <Link to={'drink/' + index}>
+            <Card className={classes.root} key={index}>
+              <CardActionArea>
+                <CardMedia image={drink.image} title={drink.name} className={classes.media} />
+                <CardContent>
+                  <Typography variant="h4">{drink.name}</Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Link>
         );
       })}
     </div>
