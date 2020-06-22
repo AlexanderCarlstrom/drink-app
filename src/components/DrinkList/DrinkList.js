@@ -20,9 +20,11 @@ const useStyles = makeStyles((theme) => ({
 const DrinkList = (props) => {
   const classes = useStyles();
 
-  return (
-    <div className="drinks">
-      {props.drinks.map((drink, index) => {
+  const drinks = () => {
+    if (!Array.isArray(props.drinks)) {
+      return <Typography variant="subtitle1">{props.drinks}</Typography>;
+    } else {
+      return props.drinks.map((drink, index) => {
         return (
           <Link to={'drink/' + drink.name} className="link" key={index}>
             <Card className={classes.root}>
@@ -35,9 +37,11 @@ const DrinkList = (props) => {
             </Card>
           </Link>
         );
-      })}
-    </div>
-  );
+      });
+    }
+  };
+
+  return <div className="drinks">{drinks()}</div>;
 };
 
 export default DrinkList;

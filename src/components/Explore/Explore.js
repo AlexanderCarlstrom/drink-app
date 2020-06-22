@@ -24,9 +24,13 @@ const Explore = () => {
       if (drink.name.toLowerCase().indexOf(search.toLowerCase()) > -1) {
         searchResults.push(drink);
       }
-
-      setResult(searchResults);
     });
+
+    if (searchResults.length === 0) {
+      setResult('No Drinks Found');
+    } else {
+      setResult(searchResults);
+    }
   };
 
   return (
